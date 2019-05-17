@@ -7,14 +7,25 @@
     <title>Document</title>
 </head>
 <body >
+    <h1><a href="/javascript/ex1.html">WEB</a></h1>
     <input type="button" value="night" onclick="
-    document.querySelector('body').style.backgroundColor='black';
-    document.querySelector('body').style.color='white';
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        this.value = 'day'
+        } else {
+        target.style.backgroundColor='white';
+        target.style.color='black';
+        this.value = 'night'
+    };
     ">
-    <input type="button" value="day" onclick="
-    document.querySelector('body').style.backgroundColor='white';
-    document.querySelector('body').style.color='black';
-    ">
-    </body>
+    <ul>
+        <li><a href="/javascript/ex1.html">WEB</a></li>
+        <li><a href="/javascript/ex1.html">WEB</a></li>
+        <li><a href="/javascript/ex1.html">WEB</a></li>
+    </ul>
+    
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut cumque, consectetur illo quisquam distinctio laboriosam quia architecto iusto quae repudiandae exercitationem veritatis voluptatum accusantium. Ea inventore ratione corrupti necessitatibus unde!</p>
+</body>
 </html>
