@@ -13,17 +13,32 @@
     if(this.value === 'night'){
         target.style.backgroundColor='black';
         document.querySelector('body').style.color='white';
-        this.value = 'day'
+        this.value = 'day';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0
+        while(i < alist.length){
+            alist[i].style.color ='powderblue';
+            i = i + 1;
+        }
+
         } else {
         target.style.backgroundColor='white';
         target.style.color='black';
-        this.value = 'night'
+        this.value = 'night';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0
+        while(i < alist.length){
+            alist[i].style.color ='blue';
+            i = i + 1;
+        }
     };
     ">
     <ul>
-        <li><a href="/javascript/ex1.html">WEB</a></li>
-        <li><a href="/javascript/ex1.html">WEB</a></li>
-        <li><a href="/javascript/ex1.html">WEB</a></li>
+        <li><a href="/javascript/ex1.html">WEB1</a></li>
+        <li><a href="/javascript/ex1.html">WEB2</a></li>
+        <li><a href="/javascript/ex1.html">WEB3</a></li>
     </ul>
     
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut cumque, consectetur illo quisquam distinctio laboriosam quia architecto iusto quae repudiandae exercitationem veritatis voluptatum accusantium. Ea inventore ratione corrupti necessitatibus unde!</p>
