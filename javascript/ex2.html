@@ -1,60 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script>
-        
-        var Links = {
-            setColor : function (color){
-            var alist = document.querySelectorAll('a');
-                var i = 0;
-                while(i < alist.length){
-                    alist[i].style.color = color;
-                    i = i + 1;
-                }
-            }
+      var Links = {
+        setColor: function(color) {
+          var alist = document.querySelectorAll("a");
+          var i = 0;
+          while (i < alist.length) {
+            alist[i].style.color = color;
+            i = i + 1;
+          }
         }
-        var Body = {
-            setColor :  function (color){
-            document.querySelector('body').style.color= color
-            },
-            setBackgroundColor : function (color){
-            document.querySelector('body').style.backgroundColor=color
-            }
+      };
+      var Body = {
+        setColor: function(color) {
+          document.querySelector("body").style.color = color;
+        },
+        setBackgroundColor: function(color) {
+          document.querySelector("body").style.backgroundColor = color;
         }
+      };
 
-        function nightDayHandler(self){
-            if(self.value === 'night'){
-                Body.setBackgroundColor('black');
-                Body.setColor('white');
-                self.value = 'day';
+      function nightDayHandler(self) {
+        if (self.value === "night") {
+          Body.setBackgroundColor("black");
+          Body.setColor("white");
+          self.value = "day";
 
-               Links.setColor('powderblue');
+          Links.setColor("powderblue");
+        } else {
+          Body.setBackgroundColor("white");
+          Body.setColor("black");
+          self.value = "night";
 
-                } else {
-                Body.setBackgroundColor('white');
-                Body.setColor('black');
-                self.value = 'night';
-
-                Links.setColor('blue');
-            }
+          Links.setColor("blue");
         }
+      }
     </script>
-</head>
-<body >
+  </head>
+  <body>
     <h1><a href="/javascript/ex1.html">WEB</a></h1>
-    <input type="button" value="night" onclick="
+    <input
+      type="button"
+      value="night"
+      onclick="
         nightDayHandler(this);
-    ">
+    "
+    />
     <ul>
-        <li><a href="/javascript/ex1.html">WEB1</a></li>
-        <li><a href="/javascript/ex1.html">WEB2</a></li>
-        <li><a href="/javascript/ex1.html">WEB3</a></li>
+      <li><a href="/javascript/ex1.html">WEB1</a></li>
+      <li><a href="/javascript/ex1.html">WEB2</a></li>
+      <li><a href="/javascript/ex1.html">WEB3</a></li>
     </ul>
-    
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut cumque, consectetur illo quisquam distinctio laboriosam quia architecto iusto quae repudiandae exercitationem veritatis voluptatum accusantium. Ea inventore ratione corrupti necessitatibus unde!</p>
-</body>
+
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut cumque,
+      consectetur illo quisquam distinctio laboriosam quia architecto iusto quae
+      repudiandae exercitationem veritatis voluptatum accusantium. Ea inventore
+      ratione corrupti necessitatibus unde!
+    </p>
+  </body>
 </html>
