@@ -26,7 +26,7 @@ const crawler = async () => {
       });
       if (text) {
         console.log(r.제목, "평점", text.trim());
-        const newCell = "c" + (i + 2);
+        const newCell = "C" + (i + 2);
         add_to_sheet(ws, newCell, "n", text.trim());
       }
       await page.waitFor(1000);
