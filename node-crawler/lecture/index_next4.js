@@ -25,9 +25,14 @@ fs.readdir("poster", err => {
 const crawler = async () => {
   try {
     const browser = await puppeteer.launch({
-      headless: process.env.NODE_ENV === "production"
+      headless: process.env.NODE_ENV === "production",
+      args: ["--window-size=1600,1000"]
     });
     const page = await browser.newPage();
+    await page.setViewport({
+      width: 1600,
+      height: 1000
+    });
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
     );
@@ -53,6 +58,10 @@ const crawler = async () => {
         add_to_sheet(ws, newCell, "n", result.score.trim());
       }
       if (result.img) {
+        const buffer = await page.screenshot({
+          path: `screenshot/${r.제목}.png`,
+          fullPage: true
+        });
         const imgResult = await axios.get(result.img.replace(/\?.*$/, ""), {
           responseType: "arraybuffer"
         });
