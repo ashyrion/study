@@ -61,6 +61,12 @@ const crawler = async () => {
         const buffer = await page.screenshot({
           path: `screenshot/${r.제목}.png`,
           fullPage: true
+          //   clip: {
+          //     x: 100,
+          //     y: 100,
+          //     width: 300,
+          //     height: 300
+          //   }
         });
         const imgResult = await axios.get(result.img.replace(/\?.*$/, ""), {
           responseType: "arraybuffer"
